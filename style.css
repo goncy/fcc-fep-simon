@@ -1,0 +1,132 @@
+html, body, #app {
+  background: skyblue;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.message {
+  color: white;
+  font-size: 3rem;
+}
+
+.simon {
+  width: 400px;
+  height: 400px;
+  border: 5px solid white;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.simon .keys {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+.simon .key {
+  border: 2px solid white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.simon .key.lit {
+  opacity: 1;
+}
+
+.simon .key.green {
+  border-top-left-radius: 100%;
+  background-color: rgba(172, 255, 47, 1);
+}
+
+.simon .key.red {
+  border-top-right-radius: 100%;
+  background-color: rgba(220, 20, 60, 1);
+}
+
+.simon .key.yellow {
+  border-bottom-left-radius: 100%;
+  background-color: rgba(255, 217, 0, 1);
+}
+
+.simon .key.blue {
+  border-bottom-right-radius: 100%;
+  background-color: rgba(0, 0, 255, 1);
+}
+
+.simon .controls {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.simon .controls .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.simon .controls .title {
+  font-size: 2.5rem;
+  font-family: cursive;
+}
+
+.simon .controls .buttons {
+  display: flex;
+  margin: 5px 0;
+}
+
+.simon .controls .count {
+  background-color: darkred;
+  color: red;
+  padding: 5px;
+  border-radius: 3px;
+  width: 20px;
+}
+
+.simon .controls .buttons .button {
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 4px;
+  border-radius: 5px;
+  width: 45px;
+  height: 15px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.simon .controls .buttons .button.active {
+  opacity: 1;
+}
+
+.simon .controls .buttons .button:not(:first-child) {
+  margin-left: 5px;
+}
+
+.simon .controls .buttons .button.start {
+  background-color: dodgerblue;
+}
+
+.simon .controls .buttons .button.strict {
+  background-color: goldenrod;
+}

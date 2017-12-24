@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>freeCodeCamp - FE advanced projects 4 - Simon</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <div v-if="message" class="message">{{message}}</div>
+    <div class="simon" :style="{pointerEvents: waiting ? 'none' : 'all'}">
+      <div class="controls">
+        <div class="container">
+          <div class="title">Simon</div>
+          <div class="count">{{level}}</div>
+          <div class="buttons">
+            <div class="button start" v-if="init" @click="play()" :class="{active: !waiting}">START</div>
+            <div class="button start" v-else @click="reset()" :class="{active: !waiting}">RESET</div>
+            <div class="button strict" @click="toggleStrict()" :class="{active: strict}">STRICT</div>
+          </div>
+        </div>
+      </div>
+      <div class="keys" :style="{pointerEvents: init ? 'none' : 'inherit'}">
+        <div @click="clicked('green')" :class="{lit: lit === 'green'}" class="key green"></div>
+        <div @click="clicked('red')" :class="{lit: lit === 'red'}" class="key red"></div>
+        <div @click="clicked('yellow')" :class="{lit: lit === 'yellow'}" class="key yellow"></div>
+        <div @click="clicked('blue')" :class="{lit: lit === 'blue'}" class="key blue"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./vendors/vue.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
