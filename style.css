@@ -15,6 +15,7 @@ html, body, #app {
 .message {
   color: white;
   font-size: 3rem;
+  font-family: cursive;
 }
 
 .simon {

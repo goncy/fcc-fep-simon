@@ -56,6 +56,9 @@ window.app = new Vue({
       this.message = ''
     },
     async clicked(key) {
+      this.audios[key].load()
+      this.audios[key].play()
+
       // Correct click
       if (key === this.steps[this.step - 1]) {
         this.lit = key
@@ -74,7 +77,7 @@ window.app = new Vue({
         this.lit = key
         this.status = 'waiting'
         this.message = 'You lost!'
-        await wait(2000)
+        await wait(3000)
         this.reset()
       }
     },
